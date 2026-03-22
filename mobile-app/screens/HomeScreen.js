@@ -23,16 +23,16 @@ const HomeScreen = ({ navigation }) => {
       />
 
       <ProductCard
-        title={"Solar Bliss - ketting"}
-        description={"Gouden ketting met zomerse bedels"}
-        price={"12.00"}
-        image={require("../Images/collier-acier-inoxydable-dore-pendentif-soleil-charms-_1.webp")}
+        title={"Heart - ring"}
+        description={"Gouden rind met diamanten hart"}
+        price={"10.00"}
+        image={require("../Images/bague-doree-or-18k-coeur-zircon-blanc.webp")}
         onPress={() =>
           navigation.navigate("Details", {
-            title: "Solar Bliss - ketting",
-            description: "Gouden ketting met zomerse bedels",
-            price: "12.00",
-            image: require("../Images/collier-acier-inoxydable-dore-pendentif-soleil-charms-_1.webp"),
+            title: "Heart - ring",
+            description: "Gouden rind met diamanten hart",
+            price: "10.00",
+            image: require("../Images/bague-doree-or-18k-coeur-zircon-blanc.webp"),
           })
         }
       />
@@ -43,10 +43,10 @@ const HomeScreen = ({ navigation }) => {
         image={require("../Images/bee.webp")}
         onPress={() =>
           navigation.navigate("Details", {
-            title: "Solar Bliss - ketting",
+            title: "Bee - oorbellen",
             description: "Gouden ketting met zomerse bedels",
-            price: "12.00",
-            image: require("../Images/collier-acier-inoxydable-dore-pendentif-soleil-charms-_1.webp"),
+            price: "15.00",
+            image: require("../Images/bee.webp"),
           })
         }
       />
