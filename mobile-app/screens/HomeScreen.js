@@ -37,10 +37,10 @@ const HomeScreen = ({ navigation }) => {
         }
       />
       <ProductCard
-        title={"Solar Bliss - ketting"}
-        description={"Gouden ketting met zomerse bedels"}
-        price={"12.00"}
-        image={require("../Images/collier-acier-inoxydable-dore-pendentif-soleil-charms-_1.webp")}
+        title={"Bee - oorbellen"}
+        description={"Gouden oorbellen in bijen vorm"}
+        price={"15.00"}
+        image={require("../Images/bee.webp")}
         onPress={() =>
           navigation.navigate("Details", {
             title: "Solar Bliss - ketting",
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f4edda",
-   
   },
   title: {
     marginTop: 50,
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
   content: {
     padding: 20,
     gap: 20,
-  }
+  },
 });
 
 export default HomeScreen;
