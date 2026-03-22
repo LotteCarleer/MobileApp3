@@ -1,23 +1,31 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import ProductCard from "../components/ProductCard.js";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import { useState } from "react";
 
-const  ProductDetail = ({ route }) => {
-  const {title, description, price, image } = route.params;
-
+const ProductDetail = ({ route }) => {
+  const { title, description, price, image } = route.params;
   const [quantity, setQuantity] = useState(1);
 
-  const increaseQuantity = () => setQuantity(quantity + 1);
-  const decreaseQuantity = () =>{ 
-    if (quantity > 1){
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
       setQuantity(quantity - 1);
     }
+  };
 
-  }
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.title}>{title}</Text>
-      <Image source={image} style={styles.image}/>
+      <Image source={image} style={styles.image} />
       <Text>{description}</Text>
       <Text>{price}</Text>
 
@@ -33,28 +41,50 @@ const  ProductDetail = ({ route }) => {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.totalPrice}> Totaal: €{price * quantity}</Text>
+      <Text style={styles.totalPrice}>Totaal: €{price * quantity}</Text>
 
-
-
-      
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
     flex: 1,
-    backgroundColor: "#f4edda",
+    backgroundColor: "#fff",
+  },
+  content: {
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "center",
   },
   title: {
-    marginTop: 50,
     fontSize: 24,
     fontWeight: "bold",
+  },
+  image: {
+    width: "100%",
+    height: 150,
+    borderRadius: 8,
+  },
+  button: {
+    backgroundColor: "#007AFF",
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
+  quantityContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: 20,
+  },
+  quantityText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginHorizontal: 10,
   },
 });
 
